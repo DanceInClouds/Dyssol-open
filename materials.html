@@ -1,0 +1,252 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Material database &#8212; Dyssol Help 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Multidimentional distributed parameters of solids" href="multiDim.html" />
+    <link rel="prev" title="Data storage subsystem" href="data.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="multiDim.html" title="Multidimentional distributed parameters of solids"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="data.html" title="Data storage subsystem"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dyssol Help 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="material-database">
+<span id="label-materialdat"></span><h1>Material database<a class="headerlink" href="#material-database" title="Permalink to this headline">¶</a></h1>
+<p>The material database in Dyssol stores physical properties and compound information.</p>
+<p>You can find the database structure in the figure below. The compound properties can be constant or T(temperature), P(pressure)-dependent. The dependent properties can be calculated using correlations.</p>
+<a class="reference internal image-reference" href="_images/structure.png"><img alt="screen" class="align-center" src="_images/structure.png" style="width: 700px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="dmdb-file">
+<h2>DMDB file<a class="headerlink" href="#dmdb-file" title="Permalink to this headline">¶</a></h2>
+<p>You can find the file <code class="docutils literal notranslate"><span class="pre">Materials.dmdb</span></code> in your installation folder, which stores global list of <strong>materials</strong> and their <strong>parameters</strong>. Typical examples in current database are air, coal, sand, urea and water.</p>
+<p>You can extend this database by defining your own new materials using the <em>Tools</em> menu bar → <em>Materials database</em>, which opens the <em>compounds editor</em> and enables you to set new compounds.</p>
+<a class="reference internal image-reference" href="_images/path.png"><img alt="screen" class="align-center" src="_images/path.png" style="width: 200px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="constant-parameters">
+<span id="label-materialdatadetailed"></span><h2>Constant parameters<a class="headerlink" href="#constant-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Not all properties have influence on internal calculations. State of aggregation can be used to define several aggregation states of the same material. These parameters can be accessed through units and material streams.</p>
+<p>Constant parameters in Dyssol consist of:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Critical pressure</li>
+<li>Critical temperature</li>
+<li>Heat of fusion</li>
+<li>Heat of vaporization</li>
+<li>Molar mass: mandatory for simulation, since many parameters are calculated based on it</li>
+<li>Normal boiling point</li>
+<li>Normal freezing point</li>
+<li>Reactivity type</li>
+<li>Formation enthalpy</li>
+<li>State of aggregation: represented by different numbers. 0 for solid, 1 for liquid, 2 for gas, 3 for unknown</li>
+<li>User defined properties</li>
+</ul>
+</div></blockquote>
+<p>For more information, please refer to <a class="reference internal" href="class.html#label-defconstprop"><span class="std std-ref">definition of constant properties</span></a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="dependent-parameters">
+<h2>Dependent parameters<a class="headerlink" href="#dependent-parameters" title="Permalink to this headline">¶</a></h2>
+<p>Like constant parameters, temperature- and/or pressure-dependent (TPD) parameters can also be accessed through units and material streams.</p>
+<p>Dependent parameters in Dyssol consist of:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Density: mandatory for simulation, since it participates in <abbr title="Particle size distribution">PSD</abbr> transformations and T-equilibrium</li>
+<li>Enthalpy: mandatory for simulation, since it participates in T-equilibrium</li>
+<li>Thermal conductivity</li>
+<li>Viscosity</li>
+<li>Permittivity</li>
+<li>Use defined properties</li>
+</ul>
+</div></blockquote>
+<p>For more information, please refer to <a class="reference internal" href="class.html#label-defdepprop"><span class="std std-ref">definition of temperature-dependent properties</span></a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="correlation-search">
+<h3>Correlation search<a class="headerlink" href="#correlation-search" title="Permalink to this headline">¶</a></h3>
+<p>The algorithm for calculating <abbr title="Temperature- and/or pressure-dependent">TPD</abbr> properties is shown as follows.</p>
+<a class="reference internal image-reference" href="_images/correlation.png"><img alt="screen" class="align-center" src="_images/correlation.png" style="width: 600px;" /></a>
+<p>For each T or P range (given in the literature), it consists of 3 steps:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Find the correlation with T &amp; P within the first T or P-range. Calculate value according to the correlation function for this range.</li>
+<li>Find the correlation with only T within the first T or P-range. Calculate value according to the correlation function for this range.</li>
+<li>Find the nearest correlation, taking only T into account. Perform nearest neighbour extrapolation.</li>
+</ol>
+</div></blockquote>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="correlation-functions">
+<h3>Correlation functions<a class="headerlink" href="#correlation-functions" title="Permalink to this headline">¶</a></h3>
+<p>The correlation functions <span class="math notranslate nohighlight">\(y = f(T,P)\)</span> in Dyssol are listed below. The letters <span class="math notranslate nohighlight">\(a ... f\)</span> are constants. For different temperatur and pressure ranges, different functions should be applied.</p>
+<ul>
+<li><p class="first">Constant:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = a\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">Linear:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = aT + bP + c\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">Exponential:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = a\,b^{c+dT+\frac{eT + f}{gT + h}} + i\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">Power function</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = a\,T^b\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">Polynomial:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = a + bT + cT^2 + dT^3 + eT^4 + fT^5 + gT^6 + hT^7\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">Shomate heat capacity:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = a + bT + cT^2 + dT^3 + \frac{e}{T^2}\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">Shomate standard enthalpy:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = aT + b\frac{T^2}{2} + c\frac{T^3}{3} + d\frac{T^4}{4} - \frac{e}{T} + f - g\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">Shomate standard entropy:</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = a + \ln T + bT + c\frac{T^2}{2} + d\frac{T^3}{3} - \frac{e}{2T^2} + f\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">List of T-values (user defined):</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = \{T1:val1, T2:val2, T3:val3, ...\}\)</span></p>
+</div></blockquote>
+</li>
+<li><p class="first">List of P-values (user defined):</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(y = \{P1:val1, P2:val2, P3:val3, ...\}\)</span></p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Material database</a><ul>
+<li><a class="reference internal" href="#dmdb-file">DMDB file</a></li>
+<li><a class="reference internal" href="#constant-parameters">Constant parameters</a></li>
+<li><a class="reference internal" href="#dependent-parameters">Dependent parameters</a><ul>
+<li><a class="reference internal" href="#correlation-search">Correlation search</a></li>
+<li><a class="reference internal" href="#correlation-functions">Correlation functions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="data.html"
+                        title="previous chapter">Data storage subsystem</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="multiDim.html"
+                        title="next chapter">Multidimentional distributed parameters of solids</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/materials.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="multiDim.html" title="Multidimentional distributed parameters of solids"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="data.html" title="Data storage subsystem"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dyssol Help 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2020, Xiye Zhou.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

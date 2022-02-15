@@ -1,0 +1,197 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Simulation core &#8212; Dyssol Help 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data storage subsystem" href="data.html" />
+    <link rel="prev" title="Unit library" href="units.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="data.html" title="Data storage subsystem"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="units.html" title="Unit library"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dyssol Help 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="simulation-core">
+<span id="label-simulation"></span><h1>Simulation core<a class="headerlink" href="#simulation-core" title="Permalink to this headline">¶</a></h1>
+<p>In simulation core, all data are processed discretely on the time scale. Different material streams and operation units are combined into the flowsheet, which is then simulated in the simulator.</p>
+<a class="reference internal image-reference" href="_images/simulator1.png"><img alt="screen" class="align-center" src="_images/simulator1.png" style="width: 400px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="material-streams">
+<h2>Material streams<a class="headerlink" href="#material-streams" title="Permalink to this headline">¶</a></h2>
+<p>All units in Dyssol are connected by material streams, which are described by a set of time points (time discretisation).</p>
+<p>Overall properties define parameters for all selected phases. Three phases - solid, liquid and gas phases - are available. Each phase is distributed along compounds content.</p>
+<p>Solid phase can be distributed along several multidimensional properties. Each stream on the flowsheet has the same set of compounds, phases and multidimensional properties.</p>
+<p>All variables in material streams are time-dependent.</p>
+<p>The structure of material streams is illustrated in the figure below. The information is transferred between operation units.</p>
+<a class="reference internal image-reference" href="_images/timePoint.jpg"><img alt="screen" class="align-center" src="_images/timePoint.jpg" style="width: 800px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference internal" href="class.html#label-stream"><span class="std std-ref">Stream</span></a> for program interface of material streams.</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="units">
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
+<p>A basic unit provides interfaces to the simulation system. It contains program interfaces to material streams, equation solvers and material database.</p>
+<p>Moreover, you can develope your own units using the template for creating custom units and then add them to the <a class="reference internal" href="units.html#label-unitslib"><span class="std std-ref">Unit library</span></a>. Please refer to <a class="reference internal" href="developer.html#label-unitdev"><span class="std std-ref">Unit development</span></a> for more information.</p>
+<a class="reference internal image-reference" href="_images/structure1.png"><img alt="" class="align-center" src="_images/structure1.png" style="width: 400px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="simulator">
+<h2>Simulator<a class="headerlink" href="#simulator" title="Permalink to this headline">¶</a></h2>
+<p>In this section, you can find the information about the main calculation algorithm.</p>
+<a class="reference internal image-reference" href="_images/algorithm.png"><img alt="screen" class="align-center" src="_images/algorithm.png" style="width: 900px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="main-method-and-approaches">
+<h3>Main method and approaches<a class="headerlink" href="#main-method-and-approaches" title="Permalink to this headline">¶</a></h3>
+<p>Following methods are applied in Dyssol for simulation. Click the corresponding names for more background theoretical information.</p>
+<ul class="simple">
+<li><a class="reference internal" href="theory.html#label-seqmodule"><span class="std std-ref">Sequential-modular approach</span></a>: each model is solved separately.</li>
+<li>Dividing of a flowsheet into <a class="reference internal" href="theory.html#label-partition"><span class="std std-ref">Partitioning and tearing</span></a>.</li>
+<li><a class="reference internal" href="theory.html#label-waverelax"><span class="std std-ref">Waveform relaxation method</span></a> (WRM) for dynamic calculation of recycle streams: dividing simulation time into shorter intervals.</li>
+<li><a class="reference internal" href="theory.html#label-extrapolation"><span class="std std-ref">Data extrapolation</span></a> to initialize each time window.</li>
+<li><a class="reference internal" href="theory.html#label-convergence"><span class="std std-ref">Convergence methods</span></a> to initialize each iteration of WRM.</li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ol class="last upperalpha simple" start="22">
+<li>Skorych et al., Novel system for dynamic flowsheet simulation of solids processes, 2017.</li>
+</ol>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="built-in-equation-solvers">
+<span id="label-equationsolvers"></span><h3>Built-in equation solvers<a class="headerlink" href="#built-in-equation-solvers" title="Permalink to this headline">¶</a></h3>
+<p>Dyssol uses IDA and KINSOL solvers in <a class="reference external" href="https://computation.llnl.gov/projects/sundials">SUNDIALS package</a>.</p>
+<a class="reference internal image-reference" href="_images/solver.png"><img alt="" class="align-center" src="_images/solver.png" style="width: 400px;" /></a>
+<p><a class="reference external" href="https://computing.llnl.gov/projects/sundials/ida">IDA solver</a> is used for automatic calculation of <strong>dynamic differential-algebraic equation systems</strong> inside the units, which applies variable-order, variable-coefficient backward differentiation formulas, in fixed-leading-coefficient form.</p>
+<p><a class="reference external" href="https://computing.llnl.gov/projects/sundials/kinsol">KINSOL solver</a> is used for automatic calculation of <strong>nonlinear algebraic systems</strong>, which applies a fixed-point iteration with Anderson acceleration.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last">Skorych et al., Investigation of an FFT-based solver applied to dynamic flowsheet simulation of agglomeration processes, Advanced Powder Technology, 30 (2019).</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Simulation core</a><ul>
+<li><a class="reference internal" href="#material-streams">Material streams</a></li>
+<li><a class="reference internal" href="#units">Units</a></li>
+<li><a class="reference internal" href="#simulator">Simulator</a><ul>
+<li><a class="reference internal" href="#main-method-and-approaches">Main method and approaches</a></li>
+<li><a class="reference internal" href="#built-in-equation-solvers">Built-in equation solvers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="units.html"
+                        title="previous chapter">Unit library</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="data.html"
+                        title="next chapter">Data storage subsystem</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/simulation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="data.html" title="Data storage subsystem"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="units.html" title="Unit library"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Dyssol Help 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2020, Xiye Zhou.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

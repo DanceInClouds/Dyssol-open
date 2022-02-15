@@ -1,0 +1,260 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome &#8212; Dyssol Help 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Get started" href="first.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="first.html" title="Get started"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Dyssol Help 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome">
+<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h1>
+<p>Dyssol, the <strong>dy</strong>namic <strong>s</strong>imulation of <strong>sol</strong>ids processes, is a novel dynamic flowsheet modelling system designed to simulate the time-dependent behaviour of complex production processes in solids processing technology. Key features including:</p>
+<ul class="simple">
+<li>Dynamic simulation of flowsheets to reflect the time-dependent behaviour of processes and to take into account the accumulation of mass and energy;</li>
+<li>Proper calculation of multidimensional distributed parameters of the solid phase, considering their possible interdependence;</li>
+<li>Flexibility and extensibility of the system for adding new models of apparatuses and solvers.</li>
+</ul>
+<p>And distinctive features including:</p>
+<ul class="simple">
+<li>Dynamic simulation of complex process structures;</li>
+<li>Advanced calculation algorithm for dynamic simulations;</li>
+<li>Consideration of solid, liquid, gas phases and their mixtures;</li>
+<li>Proper handling of multidimensional interdependent distributed parameters of solids;</li>
+<li>Providing standardized interfaces and templates for implementation of new units;</li>
+<li>High modularity and extensibility.</li>
+</ul>
+<p><a class="reference internal" href="developer.html#label-develop"><span class="std std-ref">For developers</span></a>, Dyssol provides information about how to customize your own operation units and solvers.</p>
+<p>This documentation helps you to get familiar with simulating solid processes using Dyssol. You can also find the introduction of the Dyssol system structure.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">The structure of this help documentation includes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="first.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="first.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first.html#introduction-to-gui">Introduction to GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="first.html#run-your-first-simulation">Run your first simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Unit library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="units.html#inlet-flow">Inlet flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#outlet-flow">Outlet flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#mixer">Mixer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#splitter">Splitter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#screen">Screen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#crusher">Crusher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#bunker">Bunker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#granulator">Granulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#agglomerator">Agglomerator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#time-delay">Time delay</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simulation.html">Simulation core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html#material-streams">Material streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html#units">Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simulation.html#simulator">Simulator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data storage subsystem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data.html#hdf5-data-format">HDF5 data format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#data-caching">Data caching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="materials.html">Material database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="materials.html#dmdb-file">DMDB file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="materials.html#constant-parameters">Constant parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="materials.html#dependent-parameters">Dependent parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multiDim.html">Multidimentional distributed parameters of solids</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="multiDim.html#tree-data-structures">Tree data structures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multiDim.html#treatment-of-dependent-parameters">Treatment of dependent parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">Time point management</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="time.html#data-interpolation">Data interpolation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html#interpolation-of-distributed-parameters">Interpolation of distributed parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html#steady-state-units">Steady state units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html#dynamic-units-with-recycle">Dynamic units with recycle</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="solver.html">Solver library</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="solver.html#agglomeration-solvers">Agglomeration solvers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="developer.html">For developers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#configuration-of-visual-studio-project-template">Configuration of Visual Studio project template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#unit-development">Unit development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="developer.html#solver-development">Solver development</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class.html">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="class.html#basic-unit">Basic unit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html#stream">Stream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html#particle-size-distribution">Particle size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html#thermodynamics">Thermodynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html#external-solver">External solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html#dae-systems">DAE Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html#matrices">Matrices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="class.html#list-of-universal-constants">List of universal constants</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">Theoretical background</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#discretization">Discretization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#process-systems">Process systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="theory.html#numerical-methods">Numerical methods</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="flowsheet-simulation-of-solids">
+<h2>Flowsheet simulation of solids<a class="headerlink" href="#flowsheet-simulation-of-solids" title="Permalink to this headline">¶</a></h2>
+<p>One of the main challenges in simulation of solids processes is associated with the dispersity of granular materials: the solid phase can be distributed along several interdependent parameters, such as size, shape, moisture content or density.</p>
+<p>In Dyssol, an approach with <a class="reference internal" href="multiDim.html#label-tm"><span class="std std-ref">Transformation matrices</span></a> is used for correct handling of solids in this case. This concept allows preserving information about all parameters, even those which are not considered or not changed in a particular apparatus.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="approaches-and-methods">
+<h2>Approaches and methods<a class="headerlink" href="#approaches-and-methods" title="Permalink to this headline">¶</a></h2>
+<p>The new system in Dyssol is based on the <a class="reference internal" href="theory.html#label-seqmodule"><span class="std std-ref">Sequential-modular approach</span></a>, where each model is calculated separately. This allows the simultaneous use of multiple specialized solvers for the calculation of a flowsheet and simplifies extension of the unit library with new models.</p>
+<p>To increase the computational efficiency, dynamic calculations of flowsheets with recycle streams are based on the <a class="reference internal" href="theory.html#label-waverelax"><span class="std std-ref">Waveform relaxation method</span></a>: the total simulation time is divided into smaller intervals, and models are solved separately on them, using some initial guess for the solution.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="software-system-architecture">
+<h2>Software system architecture<a class="headerlink" href="#software-system-architecture" title="Permalink to this headline">¶</a></h2>
+<p>To implement the Dyssol system, the C++ programming language and the object oriented paradigm are applied.</p>
+<p>You can get an overview of the Dyssol system structure in the figure below.</p>
+<a class="reference internal image-reference" href="_images/archi.png"><img alt="" class="align-center" src="_images/archi.png" style="width: 960px;" /></a>
+<p>To maximize the modularity of the simulation environment, models of units and solvers are not directly integrated into the framework, but may be implemented as separate objects and then added to the units library using standardized interfaces and templates.</p>
+<p>For a detailed explanation about important elements in the structure, please refer to <a class="reference internal" href="solver.html#label-solver"><span class="std std-ref">Solver library</span></a>, <a class="reference internal" href="simulation.html#label-simulation"><span class="std std-ref">Simulation core</span></a>, <a class="reference internal" href="materials.html#label-materialdat"><span class="std std-ref">Material database</span></a>, <a class="reference internal" href="data.html#label-datastor"><span class="std std-ref">Data storage subsystem</span></a> and <a class="reference internal" href="multiDim.html#label-multidim"><span class="std std-ref">Multidimentional distributed parameters of solids</span></a>.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="further-information">
+<h1>Further information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h1>
+<p>Dyssol project is funded by German Research Foundation (DFG) via SPP 1679 ‘’Dyn-Sim-FP’’.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ol class="last arabic simple">
+<li>Skorych, V., Dosta, M., Hartge, E.-U., Heinrich, S.: Novel system for dynamic flowsheet simulation of solids processes. Powder Technology 314 (2017), 665-679.</li>
+<li>Skorych, V., Dosta, M., Hartge, E.-U., Heinrich, S., Ahrens, R., Le Borne, S.: Investigation of an FFT-based solver applied to dynamic flowsheet simulation of agglomeration processes. Advanced Powder Technology  30 (2019), 555-564.</li>
+</ol>
+</div>
+<p>If you need help, please contact…</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome</a><ul>
+<li><a class="reference internal" href="#flowsheet-simulation-of-solids">Flowsheet simulation of solids</a></li>
+<li><a class="reference internal" href="#approaches-and-methods">Approaches and methods</a></li>
+<li><a class="reference internal" href="#software-system-architecture">Software system architecture</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#further-information">Further information</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="first.html"
+                        title="next chapter">Get started</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="first.html" title="Get started"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">Dyssol Help 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019-2020, Xiye Zhou.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
