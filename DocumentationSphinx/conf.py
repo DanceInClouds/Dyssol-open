@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Dyssol'
-copyright = '2021, Dyssol Development Team'
+copyright = '2022, Dyssol Development Team'
 author = 'Dyssol Development Team'
 
 # The short X.Y version
@@ -87,7 +87,7 @@ html_theme = 'sphinx_rtd_theme'
 #
 html_theme_options = {
     'logo_only': True,
-    'display_version': True,
+    'display_version': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
     'vcs_pageview_mode': 'blob',
@@ -122,6 +122,6 @@ html_static_path = ['pics']
 htmlhelp_basename = 'Dyssol'
 
 html_logo = './pics/logo_doc.png'
-
+html_favicon = './pics/logo.png'
 
 # -- Extension configuration -------------------------------------------------
